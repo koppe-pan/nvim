@@ -1,0 +1,84 @@
+{ pkgs }:
+let
+  normalizedPluginAttr = p: {
+    "${builtins.replaceStrings
+      [
+        "-"
+        "."
+      ]
+      [
+        "_"
+        "_"
+      ]
+      (pkgs.lib.toLower p.pname)
+    }" =
+      p;
+  };
+  plugins = p: builtins.foldl' (x: y: x // y) { } (map normalizedPluginAttr p);
+in
+with pkgs.vimPlugins;
+plugins [
+  FixCursorHold-nvim
+  bufferline-nvim
+  cmp-buffer
+  cmp-cmdline
+  cmp-nvim-lsp
+  cmp-path
+  cmp_luasnip
+  comment-nvim
+  diffview-nvim
+  dressing-nvim
+  flit-nvim
+  gitlinker-nvim
+  gitsigns-nvim
+  indent-blankline-nvim
+  lazy-nvim
+  leap-nvim
+  lspkind-nvim
+  lspsaga-nvim
+  lualine-nvim
+  luasnip
+  markdown-preview-nvim
+  neo-tree-nvim
+  neogen
+  neotest
+  neotest-python
+  noice-nvim
+  none-ls-nvim
+  nord-nvim
+  nui-nvim
+  nvim-autopairs
+  nvim-cmp
+  nvim-dap
+  nvim-dap-python
+  nvim-dap-ui
+  nvim-dap-virtual-text
+  nvim-lspconfig
+  nvim-nio
+  nvim-notify
+  nvim-surround
+  nvim-treesitter
+  nvim-web-devicons
+  octo-nvim
+  oil-nvim
+  overseer-nvim
+  plenary-nvim
+  rainbow-delimiters-nvim
+  telescope-nvim
+  telescope-live-grep-args-nvim
+  todo-comments-nvim
+  toggleterm-nvim
+  trouble-nvim
+  hop-nvim
+  vim-easymotion
+  #vim-edgemotion
+  vim-illuminate
+  vim-table-mode
+  #vim-wakatime
+  vimtex
+  which-key-nvim
+  claudecode-nvim
+  snacks-nvim
+  marp-nvim
+  im-select-nvim
+]
