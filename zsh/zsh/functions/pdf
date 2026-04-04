@@ -1,0 +1,3 @@
+pdf() {
+    zathura "$1" -w "$PDF_PASS" --mode fullscreen --fork
+}

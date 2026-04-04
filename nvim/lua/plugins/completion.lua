@@ -1,19 +1,17 @@
 return {
   {
-    name = "nvim-cmp",
-    dir = 'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
-      { name = "cmp-buffer",   dir = 'hrsh7th/cmp-buffer' },
-      { name = "cmp-nvim-lsp", dir = 'hrsh7th/cmp-nvim-lsp' },
-      { name = "cmp-path",     dir = 'hrsh7th/cmp-path' },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-path" },
       {
-        name = "cmp_luasnip",
-        dir = 'saadparwaiz1/cmp_luasnip',
-        dependencies = { name = "LuaSnip", dir = 'L3MON4D3/LuaSnip' },
+        "saadparwaiz1/cmp_luasnip",
+        dependencies = { "L3MON4D3/LuaSnip" },
       },
-      { name = "cmp-cmdline",  dir = 'hrsh7th/cmp-cmdline' },
-      { name = "lspkind.nvim", dir = "onsails/lspkind.nvim" },
+      { "hrsh7th/cmp-cmdline" },
+      { "onsails/lspkind.nvim" },
     },
     opts = function()
       vim.g.completeopt = "menu,menuone,noselect"

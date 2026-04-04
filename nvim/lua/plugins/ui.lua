@@ -1,7 +1,6 @@
 return {
   {
-    name = "lualine.nvim",
-    dir = 'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     config = function()
       require("lualine").setup({
         sections = {
@@ -22,9 +21,8 @@ return {
     event = "VeryLazy",
   },
   {
-    name = "bufferline.nvim",
-    dir = 'akinsho/bufferline.nvim',
-    dependencies = { { name = "nvim-web-devicons", dir = 'nvim-tree/nvim-web-devicons' } },
+    "akinsho/bufferline.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       local highlights = require("nord").bufferline.highlights({
         italic = true,
@@ -41,8 +39,7 @@ return {
     event = "VeryLazy",
   },
   {
-    name = "noice.nvim",
-    dir = "folke/noice.nvim",
+    "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -112,8 +109,7 @@ return {
     end,
   },
   {
-    name = "dressing.nvim",
-    dir = "stevearc/dressing.nvim",
+    "stevearc/dressing.nvim",
     event = "VeryLazy",
   },
 }

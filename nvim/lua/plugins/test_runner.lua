@@ -1,12 +1,10 @@
 return {
   {
-    name = "neotest",
-    dir = "@neotest@",
+    "nvim-neotest/neotest",
     dependencies = {
-      --https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
-      { name = "FixCursorHold.nvim", dir = "@fixcursorhold_nvim@" },
-      { name = "nvim-treesitter",    dir = "@nvim_treesitter@" },
-      { name = "plenary.nvim",       dir = "@plenary_nvim@" },
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
     },
     keys = { "<Leader>u" },
     config = function()
@@ -26,11 +24,10 @@ return {
     end,
   },
   {
-    name = "neotest-python",
-    dir = "@neotest_python@",
+    "nvim-neotest/neotest-python",
     dependencies = {
-      { name = "neotest",         dir = "@neotest@" },
-      { name = "nvim-treesitter", dir = "@nvim_treesitter@" },
+      "nvim-neotest/neotest",
+      "nvim-treesitter/nvim-treesitter",
     },
   },
 }

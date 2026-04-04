@@ -1,0 +1,13 @@
+usbtethering() {
+  local resolv_conf_check
+  resolv_conf_check=$(cat "/etc/resolv.conf")
+  adb forward tcp:41927 tcp:41927
+  sudo openvpn azilink.ovpn
+  #if ${resolv_conf_check%"nameserver 192.168.56.1"}; then
+  #  adb forward tcp:41927 tcp:41927
+  #  sudo openvpn azilink.ovpn
+  #else
+  #  printf "${resolv_conf_check}"
+  #  printf "write /etc/resolv.conf into\nnameserver 192.168.56.1\n"
+  #fi
+}

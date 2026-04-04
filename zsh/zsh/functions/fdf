@@ -1,0 +1,8 @@
+# zathura a pdf with FZF
+fdf() {
+    local obj
+    obj=$(find ${1:-.} -path '*/\.*' -prune \
+                    -o -name '*.pdf' -print 2> /dev/null | fzf +m) &&
+    zathura "$obj" -w "$PDF_PASS" --fork
+    #okular "$obj"
+}

@@ -1,7 +1,6 @@
 return {
   {
-    name = "nvim-dap",
-    dir = "mfussenegger/nvim-dap",
+    "mfussenegger/nvim-dap",
     event = "VeryLazy",
     config = function()
       vim.api.nvim_set_keymap("n", "<F5>", ":DapContinue<CR>", { silent = true })
@@ -26,8 +25,7 @@ return {
     end,
   },
   {
-    name = "nvim-dap-ui",
-    dir = "rcarriga/nvim-dap-ui",
+    "rcarriga/nvim-dap-ui",
     dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
     event = "VeryLazy",
     config = function()
@@ -45,22 +43,20 @@ return {
     end,
   },
   {
-    name = "nvim-dap-virtual-text",
-    dir = "theHamsta/nvim-dap-virtual-text",
+    "theHamsta/nvim-dap-virtual-text",
     dependencies = {
-      { name = "nvim-dap",        dir = 'mfussenegger/nvim-dap' },
-      { name = "nvim-treesitter", dir = 'nvim-treesitter/nvim-treesitter' },
+      { "mfussenegger/nvim-dap" },
+      { "nvim-treesitter/nvim-treesitter" },
     },
     event = "VeryLazy",
     config = true,
   },
   --[[
   {
-    name = "nvim-dap-python",
-    dir = "@nvim_dap_python@",
+    "@nvim_dap_python@",
     dependencies = {
-      { name = "nvim-dap",        dir = "@nvim_dap@" },
-      { name = "nvim-treesitter", dir = "@nvim_treesitter@" },
+      { "@nvim_dap@" },
+      { "@nvim_treesitter@" },
     },
     ft = "python",
     config = function()

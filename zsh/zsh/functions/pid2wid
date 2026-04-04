@@ -1,0 +1,5 @@
+pid2wid() {
+  local APP_PID=$!
+  sleep 1
+  echo `xdotool search --pid "$APP_PID" | head -n 1`
+}

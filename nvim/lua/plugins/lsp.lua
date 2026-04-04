@@ -1,7 +1,6 @@
 return {
   {
-    name = "nvim-lspconfig",
-    dir = "neovim/nvim-lspconfig",
+    "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       -- エラーハンドリング付きでモジュールを読み込む
@@ -88,8 +87,7 @@ return {
     end,
   },
   {
-    name = "none-ls.nvim",
-    dir = "nvimtools/none-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local null_ls_ok, null_ls = pcall(require, "null-ls")
@@ -112,8 +110,7 @@ return {
     end,
   },
   {
-    name = "lspsaga.nvim",
-    dir = "nvimdev/lspsaga.nvim",
+    "nvimdev/lspsaga.nvim",
     event = "BufRead",
     config = function()
       local lspsaga_ok, lspsaga = pcall(require, "lspsaga")

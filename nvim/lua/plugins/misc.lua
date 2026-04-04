@@ -1,7 +1,6 @@
 return {
   {
-    name = "nord.nvim",
-    dir = 'shaunsingh/nord.nvim',
+    "shaunsingh/nord.nvim",
     config = function()
       vim.g.nord_contrast = true
       vim.g.nord_italic = false
@@ -10,8 +9,7 @@ return {
     lazy = false,
   },
   {
-    name = "neo-tree.nvim",
-    dir = "nvim-neo-tree/neo-tree.nvim",
+    "nvim-neo-tree/neo-tree.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
@@ -37,11 +35,10 @@ return {
     lazy=false,
   },
   {
-    name = "telescope.nvim",
-    dir = 'nvim-telescope/telescope.nvim',
+    'nvim-telescope/telescope.nvim',
     dependencies = {
-      { name = "telescope-live-grep-args.nvim", dir = "nvim-telescope/telescope-live-grep-args.nvim" },
-      { name = "plenary.nvim", dir = 'nvim-lua/plenary.nvim' },
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
+      { "nvim-lua/plenary.nvim" },
     },
     cmd = "Telescope",
     keys = { "<leader>f" },
@@ -92,8 +89,7 @@ return {
     end,
   },
   {
-    name = "flit.nvim",
-    dir = "ggandor/flit.nvim",
+    "ggandor/flit.nvim",
     keys = function()
       local ret = {}
       for _, key in ipairs({ "f", "f", "t", "t" }) do
@@ -104,8 +100,7 @@ return {
     opts = { labeled_modes = "nx" },
   },
   {
-    name = "leap.nvim",
-    dir = "ggandor/leap.nvim",
+    "ggandor/leap.nvim",
     keys = {
       { "s",  mode = { "n", "x", "o" }, desc = "Leap forward to" },
       { "S",  mode = { "n", "x", "o" }, desc = "Leap backward to" },
@@ -122,20 +117,17 @@ return {
     end,
   },
   {
-    name = "nvim-surround",
-    dir = "kylechui/nvim-surround",
+    "kylechui/nvim-surround",
     config = true,
     event = "VeryLazy",
   },
   {
-    name = "trouble.nvim",
-    dir = "folke/trouble.nvim",
+    "folke/trouble.nvim",
     config = true,
     cmd = "Trouble",
   },
   {
-    name = "which-key.nvim",
-    dir = "folke/which-key.nvim",
+    "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
@@ -144,66 +136,32 @@ return {
     event = "VeryLazy",
   },
   {
-    name = "todo-comments.nvim",
-    dir = "folke/todo-comments.nvim",
+    "folke/todo-comments.nvim",
     config = true,
     event = "BufRead",
   },
   {
-    name = "indent-blankline.nvim",
-    dir = "lukas-reineke/indent-blankline.nvim",
+    "lukas-reineke/indent-blankline.nvim",
     event = "VeryLazy",
     main = "ibl",
     config = true,
   },
   {
-    name = "Comment.nvim",
-    dir = 'numToStr/Comment.nvim',
+    "numToStr/Comment.nvim",
     event = "BufRead",
     config = true,
   },
   {
-    name = "vim-illuminate",
-    dir = "RRethy/vim-illuminate",
+    "RRethy/vim-illuminate",
     event = "VeryLazy",
   },
   {
-    name = "overseer.nvim",
-    dir = "stevearc/overseer.nvim",
+    "stevearc/overseer.nvim",
     cmd = { "OverseerRun", "OverseerToggle" },
     config = true,
   },
-  --[[
   {
-    name = "ChatGPT.nvim",
-    dir = "@chatgpt_nvim@",
-    dependencies = {
-      { name = "nui.nvim",       dir = "@nui_nvim@" },
-      { name = "plenary.nvim",   dir = "@plenary_nvim@" },
-      { name = "telescope.nvim", dir = "@telescope_nvim@" },
-    },
-    cmd = {
-      "ChatGPT",
-      "ChatGPTActAs",
-      "ChatGPTEditWithInstructions",
-      "ChatGPTRun",
-    },
-    config = function()
-      require("chatgpt").setup({
-        openai_params = {
-          model = "gpt-4o",
-        },
-        openai_edit_params = {
-          model = "gpt-4o",
-        },
-        api_key_cmd = "rbw get OPENAI_API_KEY",
-      })
-    end,
-  },
-  --]]
-  {
-    name = "markdown-preview.nvim",
-    dir = 'iamcco/markdown-preview.nvim',
+    "iamcco/markdown-preview.nvim",
     ft = "markdown",
     keys = { "<Leader>mp" },
     config = function()
@@ -212,8 +170,7 @@ return {
     end,
   },
   {
-    name = "neogen",
-    dir = "danymat/neogen",
+    "danymat/neogen",
     cmd = "Neogen",
     config = function()
       require("neogen").setup({
@@ -224,8 +181,7 @@ return {
     end,
   },
   {
-    name = "nvim-autopairs",
-    dir = 'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
       local npairs = require("nvim-autopairs")
@@ -233,8 +189,7 @@ return {
     end,
   },
   {
-    name = "oil.nvim",
-    dir = "stevearc/oil.nvim",
+    "stevearc/oil.nvim",
     event = "syntax",
     config = function()
       require("oil").setup({
@@ -246,8 +201,7 @@ return {
     end,
   },
   {
-    name = "vim-table-mode",
-    dir = 'dhruvasagar/vim-table-mode',
+    "dhruvasagar/vim-table-mode",
     ft = "markdown",
     config = function()end,
   },
@@ -261,8 +215,7 @@ return {
   --  end,
   --},
   {
-    name = "hop-nvim",
-    dir = 'phaazon/hop.nvim',
+    "phaazon/hop.nvim",
     config = function()
       require("hop").setup({
         vim.keymap.set("n", "<leader><leader>j", "<cmd>HopLine<CR>");
@@ -303,8 +256,7 @@ return {
   },
   --[[
   {
-    name = "marp.nvim",
-    dir = "@marp_nvim@",
+    "@marp_nvim@",
     ft = "markdown",
     keys = {
       { "<leader>ms", "<cmd>MarpToggle<cr>", desc = "Toggle Marp server" },
@@ -320,8 +272,7 @@ return {
     end,
   },
   {
-    name = "im-select.nvim",
-    dir = "@im_select_nvim@",
+    "@im_select_nvim@",
     event = "InsertEnter",
     config = function()
       require("im_select").setup({

@@ -1,0 +1,12 @@
+# Copy multiple files to directory with FZF
+fcp() {
+    local obj
+    local dir
+    obj=$(find ${1:-.} -path '*/\.*' -prune \
+                    -o -type f -print 2> /dev/null | fzf -m) &&
+    dir=$(find ${1:-.} -path '*/\.*' -prune \
+                    -o -type d -print 2> /dev/null | fzf +m) &&
+    for f in "$obj"; do
+      cp "$f" "$dir"
+    done
+}

@@ -1,0 +1,8 @@
+# Copy multiple files to that directory with FZF
+fcpt() {
+    local obj
+    obj=$(find ${10:-.} -path '*/\.*' -prune \
+                    -o -type f -print 2> /dev/null | fzf +m) &&
+    cp "$obj" "$1"
+}
+

@@ -1,7 +1,6 @@
 return {
   {
-    name = "toggleterm.nvim",
-		dir = "akinsho/toggleterm.nvim",
+    "akinsho/toggleterm.nvim",
     lazy = false,  -- 起動時にロード
     config = function()
       require("toggleterm").setup({
@@ -29,21 +28,18 @@ return {
     end,
   },
 	{
-		name = "diffview.nvim",
-		dir = "sindrets/diffview.nvim" ,
-		dependencies = { { name = "plenary.nvim", dir = "@plenary_nvim@" } },
+		"sindrets/diffview.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = true,
 		event = "VeryLazy",
 	},
 	{
-		name = "gitlinker.nvim",
-		dir = 'ruifm/gitlinker.nvim'``,
+		"ruifm/gitlinker.nvim",
 		config = true,
 		event = "VeryLazy",
 	},
 	{
-		name = "gitsigns.nvim",
-		dir = "lewis6991/gitsigns.nvim",
+		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({
 				signcolumn = false,
@@ -104,12 +100,11 @@ return {
 		event = "BufRead",
 	},
 	{
-		name = "octo.nvim",
-		dir = "pwntester/octo.nvim",
+		"pwntester/octo.nvim",
 		dependencies = {
-			{ name = "plenary.nvim", dir = "@plenary_nvim@" },
-			{ name = "telescope.nvim", dir = "@telescope_nvim@" },
-			{ name = "nvim-web-devicons", dir = "@nvim_web_devicons@" },
+      "nvim-lua/plenary.nvim",
+      'nvim-telescope/telescope.nvim',
+      "nvim-tree/nvim-web-devicons",
 		},
 		cmd = { "Octo" },
 		config = function()

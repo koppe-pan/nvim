@@ -1,8 +1,8 @@
 return {
-    name = "claudecode.nvim",
-    dir = "@claudecode_nvim@",
+ --[[
+    "@claudecode_nvim@",
     dependencies = {
-        { name = "snacks.nvim",    dir = "@snacks_nvim@" },
+        { "@snacks_nvim@" },
     },
     config = true,
     keys = {
@@ -23,4 +23,5 @@ return {
       { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
       { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
     },
+ --]] 
 }
